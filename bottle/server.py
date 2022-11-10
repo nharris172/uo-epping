@@ -14,9 +14,9 @@ def index():
 
 @route('/photo.jpg')
 def photo():
-    if os.path.exists("/posted_data/photo.jpg"):
+    if os.path.exists("/posted_data/photo.png"):
 
-        return static_file('photo.jpg',root='/posted_data/')
+        return static_file('photo.png',root='/posted_data/')
 
 @route('/upload/json/', method='POST')
 def json_upload():
@@ -30,7 +30,7 @@ def json_upload():
 @route('/upload/photo/', method='POST')
 def photo_upload():
     upload = request.files.get('upload')
-    file_path = "/posted_data/photo.jpg"
+    file_path = "/posted_data/photo.png"
     if os.path.exists(file_path):
         os.remove(file_path)
     upload.save(file_path)
