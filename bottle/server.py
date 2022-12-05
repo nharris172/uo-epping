@@ -22,7 +22,7 @@ def data_json():
     for photo in glob.glob('/posted_data/*.png'):
         photos.append(photo.replace('/posted_data/','').replace('.png','-500.png'))
     for json_path in glob.glob('/posted_data/*-data.json'):
-        named_obj = json.load(json_path)
+        named_obj = json.load(open(json_path))
         json_obj[named_obj['name']] = named_obj
     response.content_type = 'application/json'
     return json.dumps({'photos':photos,'json':json_obj})
