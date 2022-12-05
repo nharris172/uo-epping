@@ -16,7 +16,7 @@
     <div class="row medium-8 large-7 columns">
       <div class="blog-post">
         <h3>Epping is [BUSY_LEVEL]</h3>
-        <img src="/photo.jpg">
+        <img src="/photo.png">
         <p>[PHOTO_TIME]</p>
       </div>
 
@@ -26,6 +26,13 @@
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
       $(document).foundation();
+
+      $.getJSON('/json_data/').done(function (data){
+
+          window.console.log(data)
+
+      })
+
     </script>
 
 

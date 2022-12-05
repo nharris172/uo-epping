@@ -1,5 +1,5 @@
 FROM python:3.9
-RUN pip install bottle
+RUN pip install bottle Pillow
 ADD server.py /scripts/
 RUN mkdir "/posted_data/"
 ADD templates/ /scripts/templates/
